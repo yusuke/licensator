@@ -9,5 +9,5 @@
 (def *js-prefix* (str *media-prefix* "js/"))
 
 ;; Other config
-(def *contact-email* "licensator@destaquenet.com")
-(def *google-analytics-key* "UA-XXXXX-XX")
+(def *contact-email* "contato@destaquenet.com")
+(def *google-analytics-key* "UA-761701-8")
