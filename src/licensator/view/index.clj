@@ -65,19 +65,19 @@ given license."
       
       {:id :patent
        :question "Do you want the license to include explicit patent-related terms?"
-       :help-text "Check \"Yes\" if you want to avoid the special danger that patents applied to a free program could make it effectively proprietary."
+       :help-text "Check \"Yes\" if the recipients, i.e., the people who get the work, are granted patent license under the contributor's essential patent claims."
        :render-fn yes-no
        :parse-fn to-boolean}
       
       {:id :closed-source-linking
        :question "Do you allow you work to be used by closed-source software?"
-       :help-text "Check \"Yes\" if you want the license to forbid closed-source software from using or including a copy or a modified version of your work."
+       :help-text "Check \"Yes\" if you permit closed-source software to use or include a copy or a modified version of your work."
        :render-fn yes-no
        :parse-fn to-boolean}
       
       {:id :affero
        :question "If your work is used as a network service, must the server on which it runs provide a pubilc download link to the program's source code?"
-       :help-text "If the work runs on a server and let users communicate with it there, the server must allow the users to download the source code corresponding to the program that it's running. If what's running there is a modified version of the work, the server's users must be able to get the source code as they modified it."
+       :help-text "If the work runs on a server and let users communicate with it there, check \"Yes\" if the server must allow the users to download the source code corresponding to the program that it's running. If what's running there is a modified version of the work, the users must be able to get the source code as they modified it."
        :render-fn yes-no
        :parse-fn to-boolean}
       

@@ -36,12 +36,12 @@
       
       {:id :patent
        :description "Includes explicit patent-related terms?"
-       :help-text "Every work, open source or otherwise, is threatened constantly by software patents."
+       :help-text "Whether the recipients, i.e., the people who get the work, are granted patent license under the contributor's essential patent claims."
        :render-fn yes-no}
       
       {:id :closed-source-linking
        :description "Allows a work to be used by closed-source software?"
-       :help-text "This license forbids closed-source software from using or including a copy or a modified version of the work."
+       :help-text "Whether this license permits closed-source software to use or include a copy or a modified version of the work."
        :render-fn yes-no}
       
       {:id :derivative-work
@@ -55,23 +55,23 @@
        :render-fn yes-no}
       
       {:id :affero
-       :description "If the work is used as a network service, must the server on which it runs provide a pubilc download link to the program's source code?"
-       :help-text "If the work runs on a server and let users communicate with it there, the server must allow the users to download the source code corresponding to the program that it's running. If what's running there is a modified version of the work, the server's users must be able to get the source code as they modified it."
+       :description "If the work is used as a network service, must the server on which it runs provide a public download link to the program's source code?"
+       :help-text "Whether the server must provide a public download link to the program's source code if the work runs on a server and let users communicate with it there. If what's running there is a modified version of the work, the users must be able to get the source code as they modified it."
        :render-fn yes-no}
       
       {:id :charge-for-distribution
        :description "Can people distribute the work and charge for it?"
-       :help-text "This license allows the work to be, sold as long as the sellers don't restrict its use under any circumstance."
+       :help-text "Whether this license allows the work to be sold, as long as the sellers don't restrict its use under any circumstance."
        :render-fn yes-no}
       
       {:id :charge-for-use
        :description "Can people distribute your work and charge its use?"
-       :help-text (list "This license allows people to sell the work " [:em "and"] " charge for its use.")
+       :help-text (list "Whether this license allows people to sell the work " [:em "and"] " charge for its use.")
        :render-fn yes-no}
       
       {:id :compatible-with
        :description "Compatible with:"
-       :help-text "The work can use (link) any work licensed under these licenses."
+       :help-text "Whether the work can use (link) any work licensed under these licenses."
        :render-fn compatible-with}])
 
 (defn licenses-view
