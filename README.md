@@ -15,9 +15,9 @@ As you can see, things can get ugly. That's why we wrote this app.
 Prerequisites
 -------------
 
-* [Clojure][clj] 1.2
-* [Clojure Contrib][contrib] 1.2
-* [Leiningen][lein] 1.3
+* [Clojure][clj] 1.2.0;
+* [Clojure Contrib][contrib] 1.2.0;
+* [Leiningen][lein] 1.3.0.
 
 
 Running Licensator
