@@ -75,7 +75,6 @@
      [:meta {:name "description" :content "Licensator is a free service that helps you choose the right license for your open source projects."}]
      [:meta {:name "author" :content "Destaquenet Solutions"}]
      [:meta {:name "viewport" :content "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}]
-     [:link {:rel "shortcut icon" :href (str *img-prefix* "favicon.png")}]
      [:title title]
      (apply include-style [{:href (str *css-prefix* "style.css") :media "all"}
 			   {:href (str *css-prefix* "handheld.css") :media "handheld"}])
