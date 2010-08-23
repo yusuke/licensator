@@ -2,12 +2,9 @@
   (:use (licensator core) :reload-all)
   (:use (clojure test)))
 
-(def ^{:private true} test-app
-     (wrap-append-slash (constantly :response)))
-
 (defn- req [method uri & params]
   "Fires a request to the application."
-  (app {:request-method method :uri uri :params (first params)}))
+  (handler {:request-method method :uri uri :params (first params)}))
 
 (defn- assert-page
   "Fires a request to the application and verifies the response."
@@ -18,20 +15,6 @@
 	     200) status))
     (cond chunk
 	  (is (re-find chunk body)))))
-
-(deftest middleware-wrap-append-slash
-  (testing "GET path with trailing slash"
-    (let [result (test-app {:request-method :get :uri "/resource/"})]
-      (is (= :response result))))
-
-  (testing "GET path without trailing slash"
-    (let [{:keys [status headers]} (test-app {:request-method :get :uri "/resource"})]
-    (is (= 302 status))
-    (is (= {"Location" "/resource/"} headers))))
-
-  (testing "Non-GET path without trailing slash"
-    (let [result (test-app {:request-method :post :uri "/resource"})]
-      (is (= :response result)))))
 
 (deftest routes
   (testing "GET non-existent page"
