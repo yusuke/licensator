@@ -23,7 +23,7 @@
 	 (wrap-stacktrace)))
 
 (defn start-server [port]
-  (run-jetty app {:port port}))
+  (future (run-jetty #'app {:port port})))
 
 (defn -main [& [port]]
   (if port
