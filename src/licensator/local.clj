@@ -12,6 +12,8 @@
 	 (wrap-reload '[licensator.core
 			licensator.config
 			licensator.licenses
+			licensator.local
+			licensator.middleware
 			licensator.view.layout
 			licensator.view.index
 			licensator.view.license
