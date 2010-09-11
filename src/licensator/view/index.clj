@@ -108,7 +108,7 @@ given license."
 			   [:p (menu :home "Licensator") " is a free service that helps you with this boring task. All you have to do is answer a few questions about your project and we'll recommend the licenses that fit best. "]
 			   [:p "Enjoy!"])}
    :content (list [:h2 "Answer as many questions as you can and hit \"Go!\""]
-		  (form-to [:post "/"]
+		  (form-to [:post "."]
 			   [:ol {:id "license-fields" :class "numbered"}
 			    (map render-question  *license-fields*)]
 			   [:div {:class "commands"}

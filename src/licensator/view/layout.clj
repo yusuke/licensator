@@ -3,10 +3,10 @@
 	(hiccup core form-helpers page-helpers)))
 
 (def ^{:private true} *menu*
-     [{:id :home     :url "/"          :title "Home"}
-      {:id :licenses :url "/licenses/" :title "Licenses"}
-      {:id :about    :url "/about/"    :title "About"}
-      {:id :contact  :url "/contact/"  :title "Contact"}])
+     [{:id :home     :uri "/"          :title "Home"}
+      {:id :licenses :uri "/licenses/" :title "Licenses"}
+      {:id :about    :uri "/about/"    :title "About"}
+      {:id :contact  :uri "/contact/"  :title "Contact"}])
 
 (defn get-menu
   "Returns the menu entry corresponding to the given id keyword."
@@ -16,7 +16,7 @@
 (defn menu
   "Returns the link markup for a menu entry."
   [id-kw text]
-  (link-to (:url (get-menu id-kw)) text))
+  (link-to (:uri (get-menu id-kw)) text))
 
 (defn menu-item
   "Returns the markup for the given menu item."
@@ -24,7 +24,7 @@
   [:li
    (cond (= current-id-kw (:id menu-entry))
 	 {:class "active"})
-   (link-to (:url menu-entry) (:title menu-entry))])
+   (link-to (:uri menu-entry) (:title menu-entry))])
 
 (defn elink-to
   "Returns the markup for an external link."
@@ -72,8 +72,9 @@
     [:head
      [:meta {:charset "utf-8"}]
      [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge,chrome=1"}]
-     [:meta {:name "description" :content "Licensator is a free service that helps you choose the right license for your open source projects."}]
+     [:meta {:name "description" :content "Licensator is a free service that helps you choose the right open source license for your projects."}]
      [:meta {:name "author" :content "Destaquenet Solutions"}]
+     [:meta {:name "keywords" :content "pick open source license chooser app help"}]
      [:meta {:name "viewport" :content "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}]
      [:title title]
      (apply include-style [{:href (str *css-prefix* "style.css") :media "all"}
