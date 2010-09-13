@@ -110,12 +110,12 @@ given license."
    :content (list [:h2 "Answer as many questions as you can and hit \"Go!\""]
 		  (form-to [:post "."]
 			   [:ol {:id "license-fields" :class "numbered"}
-			    (map render-question  *license-fields*)]
+			    (map render-question *license-fields*)]
 			   [:div {:class "commands"}
 			    (submit-button "Go!")]))))
 
 (defn- parse-param
-  ""
+  "Parses each license field submitted by the user through the input form."
   [[k v]]
   (let [key (keyword k)
 	cfn (:parse-fn (get-entry key *license-fields*))
@@ -123,7 +123,7 @@ given license."
     [key val]))
 
 (defn- parse-form
-  ""
+  "Parses the data submitted by the user through the input form."
   [form]
   (apply hash-map (mapcat parse-param form)))
 
