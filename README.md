@@ -17,7 +17,7 @@ Prerequisites
 
 * [Clojure][clj] 1.2.0;
 * [Clojure Contrib][contrib] 1.2.0;
-* [Leiningen][lein] 1.3.0.
+* [Leiningen][lein] 1.4.1.
 
 
 Running Licensator
@@ -26,7 +26,7 @@ Running Licensator
 This is a three-step process:
 
 1. Run `lein deps` to get the app's dependencies;
-2. Run `lein run server` to start the app in a local [Jetty][jetty] instance;
+2. Run `lein run` to start the app in a local [Jetty][jetty] instance;
 3. Point your browser to [http://localhost:8080][dev] and have fun!
 
 

@@ -1,8 +1,8 @@
 (defproject licensator "0.1-SNAPSHOT"
   :description "A small webapp that helps you choose the right license for your open source projects."
   :url "http://github.com/danielfm/licensator"
-  :namespaces [licensator.local
-	       licensator.production]
+  :aot [licensator.local
+        licensator.production]
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]
 		 [compojure "0.5.0"]
@@ -14,4 +14,4 @@
 		     [lein-run "1.0.0-SNAPSHOT"]]
   :compile-path "war/WEB-INF/classes"
   :library-path "war/WEB-INF/lib"
-  :run-aliases {:server [licensator.local -main]})
+  :main licensator.local)
