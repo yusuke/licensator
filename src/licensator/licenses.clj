@@ -2,8 +2,7 @@
   (use clojure.set))
 
 (def *keys* [:id :long-name :short-name :url :copyright :patent
-	     :closed-source-linking :derivative-work :affero :copyleft
-	     :charge-for-distribution :charge-for-use :compatible-with])
+	     :derivative-work :affero :copyleft :compatible-with])
 
 (def *licenses*
      [{:id :afl-v30
@@ -12,12 +11,9 @@
        :url "http://www.opensource.org/licenses/afl-3.0.php"
        :copyright true
        :patent true
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:afl-v30 :apl-v20 :bsd :freebsd :mit :new-bsd :public-domain]}
       
       {:id :apl-v20
@@ -26,12 +22,9 @@
        :url "http://www.opensource.org/licenses/apache2.0.php"
        :copyright true
        :patent true
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:apl-v20 :afl-v30 :cddl-v10 :epl-v10 :freebsd :new-bsd :mit :mpl-v11 :public-domain]}
       
       {:id :cddl-v10
@@ -40,12 +33,9 @@
        :url "http://www.opensource.org/licenses/cddl1.php"
        :copyright true
        :patent true
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:cddl-v10 :apl-v20 :afl-v30 :epl-v10 :freebsd :mit :new-bsd :public-domain]}
       
       {:id :epl-v10
@@ -54,12 +44,9 @@
        :url "http://www.opensource.org/licenses/eclipse-1.0.php"
        :copyright true
        :patent true
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false ;; Maybe
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:epl-v10 :apl-v20 :cddl-v10 :freebsd :mit :new-bsd :public-domain]}
       
       {:id :freebsd
@@ -68,12 +55,9 @@
        :url "http://www.freebsd.org/copyright/freebsd-license.html"
        :copyright true
        :patent false
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:freebsd :mit :new-bsd :public-domain]}
       
       {:id :agpl-v30
@@ -82,12 +66,9 @@
        :url "http://www.opensource.org/licenses/agpl-v3.html"
        :copyright true
        :patent true
-       :closed-source-linking false
        :derivative-work true
        :affero true
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use false
        :compatible-with [:agpl-v30 :apl-v20 :freebsd :gpl-v30 :lgpl-v30 :mit :new-bsd :public-domain]}
       
       {:id :gpl-v20
@@ -96,12 +77,9 @@
        :url "http://www.opensource.org/licenses/gpl-2.0.php"
        :copyright true
        :patent false
-       :closed-source-linking false
        :derivative-work true
        :affero false
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use false
        :compatible-with [:gpl-v20 :freebsd :lgpl-v21 :mit :new-bsd :public-domain]}
       
       {:id :gpl-v30
@@ -110,12 +88,9 @@
        :url "http://www.opensource.org/licenses/gpl-3.0.html"
        :copyright true
        :patent true
-       :closed-source-linking false
        :derivative-work true
        :affero false
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use false
        :compatible-with [:gpl-v30 :agpl-v30 :apl-v20 :freebsd :lgpl-v21 :lgpl-v30 :mit :new-bsd :public-domain]}
       
       {:id :lgpl-v21
@@ -124,12 +99,9 @@
        :url "http://www.opensource.org/licenses/lgpl-2.1.php"
        :copyright true
        :patent false
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use false
        :compatible-with [:lgpl-v21 :freebsd :mit :new-bsd :public-domain]}
       
       {:id :lgpl-v30
@@ -138,12 +110,9 @@
        :url "http://www.opensource.org/licenses/lgpl-3.0.html"
        :copyright true
        :patent true
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use false
        :compatible-with [:lgpl-v30 :apl-v20 :freebsd :lgpl-v21 :mit :new-bsd :public-domain]}
       
       {:id :mit
@@ -152,12 +121,9 @@
        :url "http://www.opensource.org/licenses/mit-license.php"
        :copyright true
        :patent false
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:mit :freebsd :new-bsd :public-domain]}
       
       {:id :mpl-v11
@@ -166,12 +132,9 @@
        :url "http://www.opensource.org/licenses/mozilla1.1.php"
        :copyright true
        :patent true
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft true
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:mpl-v11 :apl-v20 :freebsd :mit :new-bsd :public-domain]}
       
       {:id :new-bsd
@@ -180,12 +143,9 @@
        :url "http://www.opensource.org/licenses/bsd-license.php"
        :copyright true
        :patent false
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:new-bsd :bsd :freebsd :mit :public-domain]}
       
       {:id :bsd
@@ -194,12 +154,9 @@
        :url "http://www.opensource.org/licenses/bsd-license.php"
        :copyright true
        :patent false
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:bsd :freebsd :new-bsd :mit :public-domain]}
       
       {:id :public-domain
@@ -208,12 +165,9 @@
        :url "http://en.wikipedia.org/wiki/Public_domain"
        :copyright false
        :patent false
-       :closed-source-linking true
        :derivative-work true
        :affero false
        :copyleft false
-       :charge-for-distribution true
-       :charge-for-use true
        :compatible-with [:public-domain]}])
 
 (defn get-entry

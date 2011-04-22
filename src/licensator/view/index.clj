@@ -69,12 +69,6 @@ given license."
        :render-fn yes-no
        :parse-fn to-boolean}
       
-      {:id :closed-source-linking
-       :question "Do you allow you work to be used by closed-source software?"
-       :help-text "Check \"Yes\" if you permit closed-source software to use or include a copy or a modified version of your work."
-       :render-fn yes-no
-       :parse-fn to-boolean}
-      
       {:id :affero
        :question "If your work is used as a network service, must the server on which it runs provide a pubilc download link to the program's source code?"
        :help-text "If the work runs on a server and let users communicate with it there, check \"Yes\" if the server must allow the users to download the source code corresponding to the program that it's running. If what's running there is a modified version of the work, the users must be able to get the source code as they modified it."
@@ -84,12 +78,6 @@ given license."
       {:id :copyleft
        :question "Do you want derivative works to be distributed under the same license?"
        :help-text (list (elink-to "http://en.wikipedia.org/wiki/Copyleft" "Copyleft") " is a play on the word " [:em "copyright"] " to describe the practice of using copyright law to offer the right to distribute copies and modified versions of a work and requiring that the same rights be preserved in modified versions of the work.")
-       :render-fn yes-no
-       :parse-fn to-boolean}
-      
-      {:id :charge-for-use
-       :question "Can people distribute your work and charge its use?"
-       :help-text (list "Check \"Yes\" if you allow people to sell your work " [:em "and"] " charge for its use.")
        :render-fn yes-no
        :parse-fn to-boolean}])
 
@@ -139,18 +127,19 @@ given license."
 (defn licenses-found
   "Renders the page when one or more compatible licenses is found."
   [lcoll]
-  (layout
-   :menu :home
-   :title "Results - Licensator"
-   :banner {:img (str *img-prefix* "found.png")
-	    :alt "Compatible licenses"
-	    :title [:hgroup
-		    [:h2 {:class "-results-"} "Yay! There are compatible licenses!"]]
-	    :content (list [:p "We found " [:strong {:class "big"} (count lcoll)] " license(s) that you can use to license your work."]
-			   (licenses-count-msg lcoll))}
-   :content (list [:h2 "Recommended License(s)"]
-		  (ordered-list (license-links :long-name lcoll))
-		  [:p "Found something wrong? Please " (menu :contact "let us know") "."])))
+  (let [lcount (count lcoll)]
+    (layout
+     :menu :home
+     :title "Results - Licensator"
+     :banner {:img (str *img-prefix* "found.png")
+              :alt "Compatible licenses"
+              :title [:hgroup
+                      [:h2 {:class "-results-"} "Yay! There are compatible licenses!"]]
+              :content (list [:p "We found " [:strong {:class "big"} lcount] " license" (when (> lcount 1) "s") " that you can use to license your work."]
+                             (licenses-count-msg lcoll))}
+     :content (list [:h2 "Recommended License(s)"]
+                    (ordered-list (license-links :long-name lcoll))
+                    [:p "Found something wrong? Please " (menu :contact "let us know") "."]))))
 
 (defn licenses-not-found
   "Renders the page when no compatible license is found."
