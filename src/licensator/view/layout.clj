@@ -74,7 +74,7 @@
      [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge,chrome=1"}]
      [:meta {:name "description" :content "Licensator is a free service that helps you choose the right open source license for your projects."}]
      [:meta {:name "author" :content "Destaquenet Solutions"}]
-     [:meta {:name "keywords" :content "pick open source license chooser app help"}]
+     [:meta {:name "keywords" :content "pick open source license chooser app help compatibility"}]
      [:meta {:name "viewport" :content "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}]
      [:title title]
      (apply include-style [{:href (str *css-prefix* "style.css") :media "all"}
@@ -102,7 +102,7 @@
 	      content]])
       
       [:footer {:id "contentinfo" :class "body"}
-       [:p "Copyleft 2010 - " [:a {:href "http://destaquenet.com" :rel "external"} "Destaquenet Solutions"]]]
+       [:p "Copyleft 2010-2011 &minus; " [:a {:href "http://destaquenet.com" :rel "external"} "Destaquenet Solutions"]]]
 
       (str "<!--[if lt IE 7 ]><script src=\"" *js-prefix* "dd_belatedpng.js" "\"></script><![endif]-->")
       (google-analytics *google-analytics-key*)]])))
